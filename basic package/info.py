@@ -1,0 +1,2 @@
+name = 'Atipatai'
+lastname = 'Netjinda'
