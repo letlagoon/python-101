@@ -29,14 +29,17 @@ style.configure('TButton', background='blue', foreground='blue')
 
 L1 = Label(GUI,text='รายรับรายจ่าย',font=('Angsana New',30),fg='green')
 L1.grid(row=0,column=0,columnspan=2)
+
+from datetime import datetime
  
 v_data1 = StringVar() # ตัวแปรที่ใช้เก็บข้อความใน GUI
 v_data2 = StringVar() # ตัวแปรที่ใช้เก็บข้อความใน GUI
+t = datetime.now().strftime('%Y%m%d %H%M%S')
 def Button3():
-    data = E1.get(),E2.get() # ดึงข้อมูลจาก v_data
+    data = E1.get(),E2.get() # ดึงข้อมูล
     text ='ตอนนี้มีเงินในบัญชี ' + str(int(E1.get()) - int(E2.get())) + ' บาท'
-    text1 = [data,text]
-    writecsv(text1,)
+    text1 = [data,text,t]
+    writecsv(text1)
     v_data1.set('') #เคลียข้อมูลในช่องกรอก
     v_data2.set('') #เคลียข้อมูลในช่องกรอก
     messagebox.showinfo('เงินในบัญชี',text)
