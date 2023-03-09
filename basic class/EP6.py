@@ -3,10 +3,10 @@ class Fruits:
         self.fruits_list = fruits_list
     
     def name(self):
-        for fruit_name in self.fruits_list.items():
-            print(fruit_name)
+        for key, value in self.fruits_list.items():
+            print(f"{key} {value} บาท")
 
-    def find_duplicate_values(self):
+    def find_duplicate_values(self):  # สร้างตัวแปรเพื่อเก็บค่าที่ซ้ำกันของ TropicalFood 
         unique_values = set()
         duplicates = []
         for key, value in self.fruits_list.items():
@@ -14,9 +14,9 @@ class Fruits:
                 duplicates.append(value)
             else:
                 unique_values.add(value)
-        for key, value in self.fruits_list.items():
+        for key, value in self.fruits_list.items(): # แสดงผลค่าที่ซ้ำกัน โดยแสดงทั้ง key และ value
             if value in duplicates:
-                print(f"{key} มูลค่า: {value}")
+                print(f"{key} มูลค่า: {value} บาท")
     
 class TropicalFruits(Fruits):  # สร้าง class ลูกโดยสืบทอด class แม่ Fruits
     def __init__(self, fruits_list):
